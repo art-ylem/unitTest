@@ -1,7 +1,9 @@
 package com.sidorov.unittest
 
 import org.junit.Assert.*
+import org.junit.FixMethodOrder
 import org.junit.Test
+import org.junit.runners.MethodSorters
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -23,11 +25,12 @@ class BadPractice1 {
 /**
  *  Shared state
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class BadPractice2 {
     private var a = 1
 
     @Test
-    fun `bad practice 2 example test`() {
+    fun `abad practice 2 example test`() {
         assertEquals(1, a)
         a = 0
     }

@@ -10,7 +10,7 @@ class BestPractice1() {
     private lateinit var resManager: ResourcesManagerInterface
 
     companion object {
-        var a = 1
+        var a = 0
     }
 
     @Before

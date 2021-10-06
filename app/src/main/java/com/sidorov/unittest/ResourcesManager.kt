@@ -1,7 +1,7 @@
 package com.sidorov.unittest
 
-import android.content.Context
+import androidx.annotation.StringRes
 
-class ResourcesManager(private val context: Context) : ResourcesManagerInterface {
-    override fun getString(resId: Int) = context.getString(resId)
+interface ResourcesManager {
+    fun getString(@StringRes resId: Int): String
 }

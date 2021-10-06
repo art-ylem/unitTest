@@ -7,7 +7,7 @@ import org.mockito.kotlin.mock
 
 class BestPractice1() {
 
-    private lateinit var resManager: ResourcesManagerInterface
+    private lateinit var resManager: ResourcesManager
 
     companion object {
         var a = 0
@@ -15,7 +15,7 @@ class BestPractice1() {
 
     @Before
     fun resetVariables() {
-        resManager = mock<ResourcesManagerInterface> {
+        resManager = mock<ResourcesManager> {
             on { getString(any()) } doReturn "myMockStringRes"
         }
         a = 1

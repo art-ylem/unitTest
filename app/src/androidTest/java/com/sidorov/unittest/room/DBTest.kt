@@ -9,7 +9,7 @@ import org.junit.Before
 import org.junit.Test
 
 class DBTest {
-    private lateinit var database: NotesDB
+    z database: NotesDB
     private lateinit var notesDAO: NotesDAO
     private lateinit var noteDTO: NoteDTO
 

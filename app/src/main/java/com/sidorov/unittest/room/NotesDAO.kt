@@ -1,10 +1,6 @@
 package com.sidorov.unittest.room
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.sidorov.unittest.data.NoteEntity
 import io.reactivex.Single
 
@@ -16,7 +12,7 @@ interface NotesDAO {
     @Query("SELECT * FROM notes WHERE id=:id ")
     fun getById(id: String): Single<NoteEntity>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(data: NoteEntity)
 
     @Update

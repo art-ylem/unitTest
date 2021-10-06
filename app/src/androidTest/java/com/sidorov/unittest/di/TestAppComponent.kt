@@ -1,24 +1,23 @@
 package com.sidorov.unittest.di
 
 import android.content.Context
-import com.sidorov.unittest.MainActivity
-import com.sidorov.unittest.MyApp
+import com.sidorov.unittest.room.DatabaseRule
+import com.sidorov.unittest.room.DatabaseRuleWithDI
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [DataModule::class, AppModule::class])
-interface AppComponent {
+interface TestAppComponent {
 
     @Component.Builder
     interface Builder {
         @BindsInstance
         fun context(context: Context): Builder
 
-        fun build(): AppComponent
+        fun build(): TestAppComponent
     }
-
-    fun inject(into: MainActivity)
-    fun inject(into: MyApp)
+    fun inject(into: TestDI)
+    fun inject(into: DatabaseRule)
 }
